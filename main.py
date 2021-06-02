@@ -24,27 +24,6 @@ class PredictResult(Enum):
 
 folder_path = os.path.join("models", datetime.today().strftime("%Y_%m_%d_%H_%M_%S"))
 
-# def get_train_data():
-#     x = pd.read_csv("./DadosTreino.csv", sep=";")
-#     x = x.iloc[::-1]
-#     x.pop(x.columns[0])
-#     y = x.pop(x.columns[-1])
-#
-#     x = add_features(x, "train")
-#
-#     return x, y
-#
-#
-# def get_test_data():
-#     x = pd.read_csv("./DadosTeste.csv", sep=";")
-#     x = x.iloc[::-1]
-#     x.pop(x.columns[0])
-#     y = x.pop(x.columns[-1])
-#
-#
-#
-#     return x, y
-
 def add_features(x):
     # Simple moving average
     x.ta.sma(length=6, fillna=0, append=True)
