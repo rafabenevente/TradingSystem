@@ -138,7 +138,7 @@ def apply_trading_strategy(x_test, y_test):
                 # Start long operation
                 operation = Operation.LONG
                 operation_price = current_price
-                stock_number = min(int(total_money / operation_price), 100)
+                stock_number = int(total_money / operation_price)
                 total_money = total_money - (stock_number * operation_price)
                 logging.info(
                     f"BUY - Operation:{operation} - Price:{operation_price} - Qt: {stock_number} - RemainCash = {total_money}")
